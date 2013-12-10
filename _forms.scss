@@ -1,0 +1,54 @@
+/**
+ *	Forms
+ */
+
+form {
+	input[type="text"], input[type="password"], textarea {
+		@include font-regular();
+		color: $gray-dark;
+		background: #fff;
+		border: 2px solid $blue-light;
+		padding: 6px 8px;
+	}
+	.small {
+		width: 120px;
+	}
+	.medium {
+		width: 155px;
+	}
+	.large {
+		width: 200px;
+	}
+	
+	fieldset {
+		border: 0;
+	}
+	
+	button[type="submit"] {
+		float: right;
+	}
+}
+.form-vertical {
+	input, label {
+		display: block;
+		margin: 0 0 14px 0;
+	}
+	label {
+		margin: 0 0 6px 0;
+	}
+}
+.form-horizontal {
+	input, label {
+		display: block;
+		margin: 0 0 14px 9px;
+	}
+	input {
+		float: right;
+	}
+	label {
+		margin: 0 0 14px 9px;
+		padding: 8px 0 0 0;
+		width: 25%;
+		float: left;
+	}
+}

@@ -1,0 +1,17 @@
+/**
+ *	Buttons
+ */
+
+button {
+	@include font-thin();
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 0;
+	background: $blue;
+	color: #fff;
+	padding: 6px 12px;
+	font-size: 90%;
+}
+button:hover {
+	background: $blue-light;
+}

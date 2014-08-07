@@ -1,0 +1,348 @@
+div.input-wrap{
+	position: relative;
+	overflow: hidden;
+	padding-top: 12px;
+
+	&:nth-child(2n+2){
+		margin-right: 0;
+	}
+	
+	&.fullWidth{
+		width: 100%;
+		margin-right: 0;
+	}
+	
+	&.threeCol{
+		width: 32%;
+		margin-right: 2%;
+		
+		&:nth-child(2n+2){
+			margin-right: 2%;
+		}
+		
+		&:nth-child(3n+3){
+			margin-right: 0;
+		}
+	}
+	
+	&.requiredInput{
+		label{
+			&:before{
+				content: '*';
+				font-size: 40px;
+				font-weight: 100;
+				line-height: 0;
+				margin-right: 5px;
+				position: relative;
+				top: 18px;
+			}
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		background: #fff;
+		top: 12px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-radius: 6px;
+		height: 30px;
+		border: 1px solid #cacaca;
+		z-index: -1;
+	}
+	
+	&.textarea{
+		&:after{
+			height: auto;
+		}
+	}
+	
+	&.radio, &.checkbox{
+		&:after{
+			content: none;
+		}
+	}
+	
+	input[type="text"], input[type="number"], input[type="password"], textarea{
+		width: 100%;
+		max-width: 100%;
+		border: none;
+		background: none;
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		padding: 9px;
+		height: 30px;
+		outline: 0;
+		border-radius: 4px;
+		font-size: inherit;
+		box-shadow: none;
+		font-family: inherit;
+		font-weight: 300;
+		
+		&+label{
+			@include vendor-prefix(transition, 'color 0.2s, top 0.2s');
+		    position: absolute;
+		    color: #999;
+		    padding: 9px 9px 7px;
+		    top: 13px;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+			z-index: 1;
+		    border-radius: 4px 4px 0 0;
+		    line-height: 1;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    font-size: 13px;
+		    font-weight: 300;
+	
+		}
+		
+		~.clear-input{
+			position: absolute;
+			top: 18px;
+			right: 5px;
+			color: darken($light, 10%);
+			background: white;
+			padding: 0 5px;
+			cursor: pointer;
+			display: none;
+			z-index: 2;
+			
+			&:hover{
+				color: red;
+			}
+		}
+
+		&.hasValue{			
+			~label{
+				font-size: 45%;
+				font-weight: 400;
+				padding: 2px 6px 0px;
+				top: 0px;
+				left: 3px;
+				bottom: 28px;
+				text-transform: uppercase;
+				color: #c0c0c0;
+				
+				&:before{
+					content: '';
+					margin: 0;
+					font-size: inherit;
+				}
+			}
+			
+			~.clear-input{
+				display: block;
+			}
+		}
+		
+		&:hover{
+			border-color: #afd0ee;
+		}
+		
+		&:invalid{
+			border-color: red;
+			
+			~label{
+				background: red;
+				color: white;
+				font-size: 70%;
+				padding: 3px 6px 1px;
+				z-index: 1;
+				top: 0px;
+				margin-top: -16px;
+				bottom: 38px;
+				
+				&:before{
+					content: '';
+					margin: 0;
+					font-size: inherit;
+				}
+			}
+		}
+		
+		&[required], &[required="true"], &[required="required"]{
+			border-color: red;
+			
+			~label{
+				color: #999;
+				font-size: 100%;
+				padding: 7px 9px 7px;
+				z-index: 0;
+				top: 0;
+			    bottom: 0;
+			    left: 0;
+				margin: 0;
+				background: none;
+				
+				&:before{
+					content: '*';
+					font-size: 40px;
+					font-weight: 100;
+					line-height: 0;
+					margin-right: 5px;
+					position: relative;
+					top: 18px;
+				}
+			}
+			
+			&:valid{
+				border-color: #cacaca;
+				
+				&:focus{
+					border-color: #89BCEB;
+				}
+			}
+		}
+		
+		&:focus{
+			border-color: #89BCEB;
+			
+			~label{
+				font-size: 45%;
+				font-weight: 400;
+				padding: 2px 6px 0px;
+				z-index: 2;
+				top: 0px;
+				left: 3px;
+				bottom: 28px;
+				text-transform: uppercase;
+				color: #999;
+				
+				&:before{
+					content: '';
+					margin: 0;
+					font-size: inherit;
+				}
+			}
+		}
+	}
+	
+	textarea[data-bind*="wysihtml5"], textarea[data-bind^="wysihtml5"]{
+		font-size: 14px;
+		line-height: 18px;
+	}
+	
+	textarea{
+		height: 68px;
+		resize: none;
+		
+		&:focus{
+			
+			+label{
+				bottom: 66px;
+			}
+		}
+	}
+	
+	label{
+	    color: #999;
+	    font-size: 13px;
+	    font-weight: 300;
+	    cursor: pointer;
+
+	}
+	
+	> label{
+		&:first-child{
+			position: static;
+			margin: 0 0 5px;
+			padding: 0;
+			display: block;
+			color: $dark;
+		}
+	}
+}	
+.error-gutter{
+	max-height: 0;
+	color: white;
+	background: #c43636;
+	text-transform: uppercase;
+	margin: 2px 0 0;
+	font-size: 0.6rem;
+	text-align: center;
+	font-weight: 900;
+	overflow: hidden;
+	
+	&.open{
+		max-height: 30px;
+		padding: 1px;
+		@include vendor-prefix(transition, 'max-height .3s');
+	}
+}
+
+select{
+	border: 1px solid #c4c4c4;
+	white-space: normal;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: 'Source Sans Pro', sans-serif;
+    background: #ffffff; /* Old browsers */
+	background: url(../../images/select-arrow-gray.png), -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 100%); /* FF3.6+ */
+	background: url(../../images/select-arrow-gray.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+	background: url(../../images/select-arrow-gray.png), -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+	background: url(../../images/select-arrow-gray.png), -o-linear-gradient(top,  #ffffff 0%,#f1f1f1 100%); /* Opera 11.10+ */
+	background: url(../../images/select-arrow-gray.png), -ms-linear-gradient(top,  #ffffff 0%,#f1f1f1 100%); /* IE10+ */
+	background: url(../../images/select-arrow-gray.png), linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+    background-repeat: no-repeat;
+    background-position: -50px -50px;
+    
+    &[required], &[required="true"], &[required="required"]{
+		border-color: $red;
+		
+		&:valid{
+			border-color: #cacaca;
+		}
+	}
+	
+	&:disabled, &[disabled="disable"], &[disabled="true"]{
+		opacity: .5;
+	}
+	
+	&:focus{
+		outline: none;
+		border-color: #009EC5;
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		-webkit-appearance: none;
+		background-position: right center;
+		padding: 6px 26px 6px 5px;
+	}
+	
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+		background-position: right center;
+		padding-right: 30px;
+	
+		&::-ms-expand {
+			display: none;
+		}
+	}
+	
+	@-moz-document url-prefix(){
+		/* for Firefox */
+		-moz-appearance: none;
+		text-indent: 0.01px;
+		text-overflow: "";
+		background: linear-gradient(to bottom, #FFF 0%, #F1F1F1 100%);
+		padding: 5px 5px 6px;
+	
+		/* hides the dotted outline on focus in FF (See SO#3773430) */
+		&:-moz-focusring {
+			color: transparent;
+			text-shadow: 0 0 0 #000;
+		}
+		
+		option{
+			background: white;
+			padding: 0 5px;
+		}
+	}
+}

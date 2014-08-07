@@ -1,0 +1,118 @@
+@-moz-keyframes bubblingG {
+	0% {
+		width: 6px;
+		height: 6px;
+		-moz-transform: translateY(0);
+	}
+	100% {
+		width: 14px;
+		height: 14px;
+		-moz-transform: translateY(-6px);
+	}
+}
+
+@-webkit-keyframes bubblingG {
+	0% {
+		width: 6px;
+		height: 6px;
+		-webkit-transform: translateY(0);
+	}
+
+	100% {
+		width: 14px;
+		height: 14px;
+		-webkit-transform: translateY(-6px);
+	}
+
+}
+
+@-ms-keyframes bubblingG {
+	0% {
+		width: 6px;
+		height: 6px;
+		-ms-transform: translateY(0);
+	}
+
+	100% {
+		width: 14px;
+		height: 14px;
+		-ms-transform: translateY(-6px);
+	}
+
+}
+
+@-o-keyframes bubblingG {
+	0% {
+		width: 6px;
+		height: 6px;
+		-o-transform: translateY(0);
+	}
+
+	100% {
+		width: 14px;
+		height: 14px;
+		-o-transform: translateY(-6px);
+	}
+
+}
+
+@keyframes bubblingG {
+	0% {
+		width: 6px;
+		height: 6px;
+		transform: translateY(0);
+	}
+
+	100% {
+		width: 14px;
+		height: 14px;
+		transform: translateY(-6px);
+	}
+
+}
+.small-load {
+	text-align: center;
+	width:48px;
+	height:30px;
+
+	span {
+		display: inline-block;
+		vertical-align: top;
+		width: 6px;
+		height: 6px;
+		margin: 15px auto;
+		background: $green;
+		-moz-border-radius: 30px;
+		-moz-animation: bubblingG 0.5s infinite alternate;
+		-webkit-border-radius: 30px;
+		-webkit-animation: bubblingG 0.5s infinite alternate;
+		-ms-border-radius: 30px;
+		-ms-animation: bubblingG 0.5s infinite alternate;
+		-o-border-radius: 30px;
+		-o-animation: bubblingG 0.5s infinite alternate;
+		border-radius: 30px;
+		animation: bubblingG 0.5s infinite alternate;
+
+		&:nth-of-type(1) {
+			-moz-animation-delay: 0s;
+			-webkit-animation-delay: 0s;
+			-ms-animation-delay: 0s;
+			-o-animation-delay: 0s;
+			animation-delay: 0s;
+		}
+		&:nth-of-type(2) {
+			-moz-animation-delay: 0.15s;
+			-webkit-animation-delay: 0.15s;
+			-ms-animation-delay: 0.15s;
+			-o-animation-delay: 0.15s;
+			animation-delay: 0.15s;
+		}
+		&:nth-of-type(3) {
+			-moz-animation-delay: 0.3s;
+			-webkit-animation-delay: 0.3s;
+			-ms-animation-delay: 0.3s;
+			-o-animation-delay: 0.3s;
+			animation-delay: 0.3s;
+		}
+	}
+}

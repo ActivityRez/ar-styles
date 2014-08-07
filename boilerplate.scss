@@ -1,0 +1,157 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.03em;
+}
+
+.clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+}
+
+.microcopy{
+	text-transform: uppercase;
+	font-size: 0.5em;
+	font-weight: 600;
+	color: #a0a0a0;
+}
+
+.dropdown {
+	text-align: left;
+	background: #fff;
+	margin-top: 0;
+	position: relative;
+	width: 150px;
+	border: 1px solid #777;
+	border-radius: 4px;
+	padding-right: 0;
+	font-size: 14px;
+	color: #777;
+	cursor: pointer;
+	
+	&:hover{
+		color: lighten(#777, 10%);
+		border-color: lighten(#777, 10%);
+		
+		.toggle{
+			&:after{
+				border-top-color: lighten(#777, 10%);
+			}
+		}
+	}
+	
+	.option {
+		cursor: pointer;
+		line-height: 18px;
+		white-space: nowrap;
+		padding: 5px 5px 5px 8px;
+		font-weight: 400;
+	}
+
+	.toggle {
+		float: right;
+		width: 30px;
+		height: 18px;
+		position: relative;
+		cursor: pointer;
+		border-left: 1px solid #CECACA;
+		margin-top: 5px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 37%;
+			right: 10px;
+			width: 0;
+			height: 0;
+			border: 6px solid transparent;
+			border-top: 6px solid #777;
+		}
+	}
+	.point {
+		position: absolute;
+		right: 40px;
+		width: 0;
+		height: 0;
+		border: 10px solid transparent;
+		border-bottom: 10px solid #F7F7F7;
+		@include vendor-prefix(filter, 'drop-shadow(0 -1px rgb(100, 100, 100))');
+		z-index: 4;
+		display: none;
+		top: 14px;
+		
+		&.blue{
+			border-bottom-color: $blue;
+		}
+	}
+	.popup {
+		background: #F7F7F7;
+		max-height: 0;
+		@include vendor-prefix(transition, 'max-height 0.3s');
+		border-radius: 4px;
+		position: absolute;
+		width: 300px;
+		right: 0;
+		top: 32px;
+		left: auto;
+		margin: 0;
+		overflow-y: auto;
+		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
+		@include vendor-prefix(column-break-inside, 'avoid');
+
+		.option {
+			padding: 5px 32px 5px 20px;
+			color: black;
+			max-width: 298px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			&:first-of-type {
+				padding-top: 10px;
+			}
+			&:last-of-type {
+				padding-bottom: 10px;
+			}
+			&.selected {
+				background: $blue;
+				color: white;
+			}
+		}
+	}
+	&.open{
+		/*
+margin-bottom: .1em;
+		top: .1em;
+*/
+		
+		.toggle {
+			height: 18px;
+		}
+		.popup {
+			max-height: 462px;
+			z-index: 3;
+			border: 1px solid #7E7E7E;
+			min-height: 20px;
+		}
+		
+		.point {
+			display: block;
+		}
+	}
+}

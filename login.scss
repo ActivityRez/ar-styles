@@ -1,0 +1,149 @@
+#login{
+	.floater {
+	    position: absolute;
+	    top: 50%;
+	    margin-top: -95px;
+	    left: 30px;
+	    right: 30px;
+	}
+	
+	.header {
+	}
+	
+	h1 {
+		height: 0;
+		width: 240px;
+		padding: 57px 0 0 0;
+		overflow: hidden;
+		background: url(../../images/arezLogo_login.png);
+		margin: 0;
+		
+	}
+	
+	h2 {
+		margin: 0;
+		font-weight: 400;
+		font-size: 1em;
+		color: $darker;
+	}
+	
+	.buttons {
+		margin: 13px 0 0 10px;
+		float: right;
+		
+		span {
+			cursor: pointer;
+			text-decoration: underline;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+		.btn {
+			margin: 0;
+			width: 95px;
+		}
+	}
+	
+	.creator {
+		text-transform: capitalize;
+		margin-top: 4px;
+		padding: 5px 0;
+		cursor: pointer;
+		color: $darker;
+		font-weight: 500;
+	}
+	
+	.input-wrap {
+		width: 254px;
+		
+		input{
+			&:focus{
+				~label{
+					
+				}
+			}
+		}
+	}
+	
+	.error {
+		text-transform: capitalize;
+		clear: both;
+		margin-top: 10px;
+		font-size: .9em;
+		font-style: italic;
+		font-family: inherit;
+		color: white;
+	}
+	
+	.row{
+		&.forgotPass{
+			text-transform: capitalize;
+			color: $darker;
+			font-size: 12px;
+			text-decoration: underline;
+			cursor: pointer;
+			font-weight: 500;
+			opacity: .7;
+			clear: both;
+			margin: 18px 0 0;
+			
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		
+		&.loginInputs{
+			float: left;
+			
+			#loginusername{
+				margin-bottom: 10px;
+			}
+		}
+		
+		&.check{
+			font-weight: 600;
+			font-size: 21px;
+			color: #0074bf;
+			background: white;
+			padding: 10px;
+			text-transform: capitalize;
+			margin: 20px 0;
+			text-align: center;
+			position: relative;
+			left: 21px;
+			width: 203px;
+			
+			&:after{
+				content: '';
+				border: 23px solid transparent;
+				border-top-color: white;
+				border-bottom-color: white;
+				border-right: none;
+				position: absolute;
+				right: 223px;
+				top: 0px;
+			}
+			
+			&:before{
+				content: '';
+				border: 23px solid white;
+				border-top-color: transparent;
+				border-bottom-color: transparent;
+				border-right: none;
+				position: absolute;
+				right: -23px;
+				top: 0px;
+			}
+		}
+	}
+	
+	.loading {
+		position: absolute;
+		left: 50%;
+		margin-left: -64px;
+		top: 50%;
+		margin-top: -64px;
+	}
+}

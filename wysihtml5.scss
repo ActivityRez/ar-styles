@@ -1,0 +1,126 @@
+.editor-toolbar {
+	background: #ECECEC;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #d0d0d0;
+	border-radius: 6px 6px 0 0;
+
+	li {
+		color: #000;
+		font-weight: bold;
+		text-decoration: none;
+		padding: 5px 10px;
+		display: inline-block;
+		border-right: 1px solid #DFB978;
+		border-right: 1px solid #ddd;
+		width: 41px;
+		height: 34px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		line-height: 21px;
+		vertical-align: top;
+		background-size: 14px;
+		font-size: 14px;
+		cursor: pointer;
+
+		&:last-of-type {
+			border-right: none;
+		}
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-color:$blue;
+			color: #fff;
+		}
+	}
+
+	.linker {
+		background: #ddd;
+		padding: 10px 40px;
+		font-size: 0.9em;
+
+		.btn {
+			float: right;
+			margin-left: 3px;
+			line-height: 1;
+			padding: 5px 10px;
+			color: white;
+			margin-top: 3px;
+			@include vendor_prefix(transition, 'opacity .25s ease');
+			border-color: $dark - 30;
+			background: $dark;
+			width: auto;
+			
+			&:nth-child(2){
+				background: $green;
+				border-color: $green - 30;
+				color: white;
+			}
+		}
+
+		.input-wrap {
+			padding-right: 10px;
+			padding-top: 0;
+
+			input {
+				border: none;
+				background: #fff;
+				color: #666;
+			}
+		}
+	}
+
+	.bold {
+		background-image: url('/ar-core/asset/UserView/images/bold.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-bold.png');
+		}
+	}
+
+	.italic {
+		background-image: url('/ar-core/asset/UserView/images/italic.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-italic.png');
+		}
+	}
+
+	.underline {
+		background-image: url('/ar-core/asset/UserView/images/underline.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-underline.png');
+		}
+	}
+
+	.list2 {
+		background-image: url('/ar-core/asset/UserView/images/list2.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-list2.png');
+		}
+	}
+
+	.numbered-list {
+		background-image: url('/ar-core/asset/UserView/images/numbered-list.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-numbered-list.png');
+		}
+	}
+
+	.link {
+		background-image: url('/ar-core/asset/UserView/images/link.png');
+
+		&.wysihtml5-command-active,
+		&.wysihtml5-command-dialog-opened {
+			background-image: url('/ar-core/asset/UserView/images/w-link.png');
+		}
+	}
+}

@@ -1,0 +1,136 @@
+.calendar-wrap {
+	position: relative;
+
+	> .close.btn {
+		float: right;
+		top: 12px !important;
+		margin-left: -28px !important;
+		border-radius: 0 6px 6px 0;
+		padding: 1px 3px 2px !important;
+		display: none;
+		z-index: 12;
+		
+		.remove{
+			line-height: 1.4;
+		}
+	}
+}
+.calendar {
+	position: absolute;
+	z-index: 12;
+	font-size: .9rem;
+	left: 0;
+	top: 54px;
+	width: 300px;
+	display: none;
+	background: #fbfbfb;
+	color: $dark;
+	@include vendor-prefix(user-select, 'none');
+	
+	&:before {
+		content: '';
+		border: 15px solid transparent;
+		border-bottom-color: $darker;
+		@include vendor-prefix(filter, 'drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.2))');
+		position: absolute;
+		top: -28px;
+		left: 40px;
+	}
+	
+	&.show {
+		display: block;
+	}
+	
+	.header {
+		background: $darker;
+		color: white;
+		padding: 10px;
+		border: 2px solid rgba(255, 255, 255, 0.1);
+		border-bottom: none;
+		font-size: 1rem;
+		cursor: default;
+		
+		.nav {
+			cursor: pointer;
+			font-weight: 900;
+			margin-top: 0;
+			font-size: 1.5rem;
+			position: relative;
+			top: -5px;
+			margin-bottom: -5px;
+			
+			&.next {
+				float: right;
+			}
+			
+			&.prev {
+				float: left;
+			}
+		}
+	}
+	
+	.day {
+		float: left;
+		width: 10.2857143%;
+		margin: 0 2%;
+		text-align: center;
+	}
+	
+	.date {
+		text-align: center;
+		
+		span {
+			margin-right: 8px;
+			
+			&+span {
+				opacity: .6;
+				margin: 0;
+			}
+		}
+	}
+	
+	.days {
+		padding: 5px 0;
+		background: $light;
+		border-left: 2px solid lighten($medium, 40%);
+		border-right: 2px solid lighten($medium, 40%);
+		font-weight: 800;
+		
+		.day {
+			height: 17px;
+			cursor: default;
+		}
+	}
+	
+	.body {
+		border: 2px solid lighten($medium, 40%);
+		border-top: none;
+		padding: 10px 0;
+		
+		.day {
+			border-radius: 50%;
+			cursor: pointer;
+			padding: 7px 0;
+			@include vendor-prefix(transition, 'background .25s');
+			
+			&:hover {
+				background: $light;
+			}
+			
+			&.selected {
+				background: $green;
+				color: white;
+				font-weight: 400;
+			}
+			
+			&.disabled {
+				color: $light;
+				cursor: default;
+				
+				&:hover {
+					background: none;
+				}
+			}
+		}
+	}
+}

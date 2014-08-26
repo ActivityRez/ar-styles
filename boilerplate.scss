@@ -173,11 +173,11 @@ margin-bottom: .1em;
 
 .page {
 	position: fixed;
-	top: 61px;
+	top: 46px;
 	bottom: 0;
 	left: -100%;
 	right: 100%;
-	padding-left: 270px;
+	padding-left: 246px;
 	padding-bottom: 20px;
 	overflow: auto;
 	box-sizing: border-box;
@@ -253,15 +253,12 @@ margin-bottom: .1em;
 }
 
 .main-header{
-	background: $blue;
-	color: white;
-	padding: 15px 0;
+	color: $darker;
+	padding: 0 0 15px;
 	margin-bottom: 60px;
 	position: relative;
 	
 	h1.row{
-		font-size: 2rem;
-		color: white;
 		
 		.btn{
 			padding: 4px 12px;

@@ -1,175 +1,132 @@
-#browser {
-	padding: 20px;
-	width: 265px;
-	border-right: 1px solid #E4E4E4;
-	
-	.sub-menu {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		width: 90px;
-		margin: 0 20px 0 -20px;
-		padding: 59px 10px 0;
-		background: $darker-but-not-so-dark;
-		font-weight: 100;
-		overflow: hidden;
-		@include vendor-prefix(transition, 'padding 0.3s, max-height 0.3s, border-color 0.3s');
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: -420px;
+	width: 420px;
+	background: $dark-blue;
+	z-index: 20;
+	@include vendor-prefix(transition, 'right 0.5s');
 
-		&.show {
-			padding: 6px 30px;
-			max-height: 200px;
-			border-color: #333;
-		}
-
-		a {
-			color: $darker;
-			display: block;
-			cursor: pointer;
-			opacity: .6;width: 63px;
-			margin: 0 auto 29px;
-			@include vendor-prefix(transition, 'opacity 0.3s');
-			background: url(../../images/top-level-sprites.png) 8px 0 no-repeat;
-			padding: 53px 0 0;
-			text-align: center;
-			font-size: .5rem;
-			font-weight: 900;
-			line-height: 1.6;
-			
-			&:hover{
-				opacity: .7;
-			}
-
-			&.disabled {
-				opacity: .15;
-				cursor: default;
-			}
-			&.disabled:hover {
-				opacity: .15;
-			}
-			
-			&.account-manage{}
-			&.marketplace{background-position: -45px 0;}
-			&.products{background-position: -97px 0;}
-			&.sales-channels{background-position: -155px 0;}
-			&.reports{background-position: -209px 0;}
-			&.fulfillment{background-position: -264px 0;}
-			&.dispatch{background-position: -374px 0;}
-			&.crm{background-position: -319px 0;}
-		}
+	&.show {
+		left: 0;
 	}
 	
-	.main-menu{
-		float: left;
-		margin-left: 70px;
-		width: 175px;
+	&#browser{
+		width: 246px;
+		padding: 5px 0 5px 16px;
 		
-		.navItem{
-			color: $dark;
-			text-decoration: none;
-			padding: 12px 18px;
-			font-weight: 400;
-			display: block;
-			text-transform: capitalize;
-			@include vendor-prefix(transition, 'background .25s ease');
-	
-			&:hover{
-				background: #e0e0e0 + 10;
-			}
-			
-			&.active {
-				background: $green;
-				color: white;
-			}
-	
-			&.disabled {
-				color: #BEBEBE;
-				pointer-events: none;
-				cursor: default;
-	
-				&:hover {
-					background: none;
-				}
+		.head{
+			h1{
+				background: url(../../images/arezLogo_sidebar.png) no-repeat;
+				height: 0;
+				padding: 30px 0 0;
+				overflow: hidden;
+				width: 120px;
+				margin: 0 auto 40px;
 			}
 		}
-	}
-
-	.prod-nav {
-		.head {
-			cursor: pointer;
-			margin-left: 88px;
+		
+		.main-menu{
+			margin: 0 0 0 -16px;
 			
-			.external-icon{
-				display:none;
-				background: url(../../images/external-icon.png) no-repeat;
-				height: 18px;
-				width: 18px;
-				float: right;
-				margin: 6px 0 0 0;
-				opacity: .2;
-				@include vendor-prefix(transition, 'opacity .25s ease');
+			a{
+				display: block;
+				color: white;
+				font-size: 14px;
+				font-weight: 300;
+				opacity: .71;
+				padding: 16px 39px 13px;
+				background: url(../../images/sidebar-sprites.png) no-repeat;
+				position: relative;
+				@include vendor-prefix(transition, 'background-color 0.3s');
 				
 				&:hover{
+					background-color: $dark-blue + 7;
+				}
+				
+				&.account-manage{background-position: 16px 15px}
+				&.marketplace{background-position: 16px -18px}
+				&.products{background-position: 16px -47px}
+				&.sales-channels{background-position: 16px -80px}
+				&.reports{background-position: 16px -112px}
+				&.operations{background-position: 16px -143px}
+				&.fulfillment{background-position: 16px -175px}
+				&.dispatch{background-position: 16px -206px}
+				
+				&.selected{
+					background-color: $blue;
 					opacity: 1;
+					
+					&:after{
+						content: '';
+						position: absolute;
+						right: 0;
+						top: 13px;
+						border: 10px solid transparent;
+						border-right-color: $extra-light; 
+					}
 				}
 			}
 			
-			h1 {
-				height: 0;
-				width: 120px;
-				padding: 29px 0 0 0;
-				overflow: hidden;
-				background: url(../../images/arezLogo_sidebar.png);
-				margin: 0;
-			}
-
-			h2 {
-				font-weight: 100;
-				font-size: 0.5em;
-				color: white;
-				margin: -2px 0 10px 0;
-				color: $darker;
+			.subnav{
+				background-color: $dark-blue - 10;
+				
+				a{
+					&:hover{
+						background-color: $dark-blue - 3;
+					}
+				}
 			}
 		}
 	}
+}
 
-	.header {
-		color: $darker;
-		margin: 0;
-		margin-top: 30px;
-		font-size: 1em;
-		font-weight: 500;
-		text-decoration: none;
-		font-family: inherit;
-		position: absolute;
-		bottom: 71px;
-		margin-left: 18px;
-		opacity: .7;
-	}
-
-	h3 {
-		margin: 0;
-		font-weight: 500;
-		text-transform: capitalize;
-		color: $darker;
-		font-size: .5em;
-		position: absolute;
-		bottom: 60px;
-		left: 20px;
-		right: 20px;
-		margin-left: 88px;
-		opacity: .7;
-	}
-
-	.logout {
-		color: $darker;
-		text-decoration: none;
-		font-weight: 500;
+.user-actions{
+	position: absolute;
+	bottom: 20px;
+	
+	a{
 		background: url(../../images/powerIcon.png) no-repeat;
-		padding: 2px 0 3px 24px;
+		color: white;
+		font-size: 14px;
+		font-weight: 300;
+		opacity: .71;
+		padding: 1px 0 1px 21px;
 		display: block;
-		position: absolute;
-		bottom: 20px;
-		margin-left: 18px;
+		margin-bottom: 10px;
+	}
+	
+	.agency{
+		color: white;
+		font-size: 12px;
+		font-weight: 300;
+		text-transform: uppercase;
 		opacity: .5;
+	}
+}
+
+.top-menu{
+	padding-left: 270px;
+	background: $dark-blue;
+	
+	a{
+		font-size: 16px;
+		font-weight: 300;
+		color: white;
+		opacity: .5;
+		padding: 15px;
+		display: block;
+		float: left;
+		@include vendor-prefix(transition, 'background-color 0.3s');
+		
+		&:hover{
+			background-color: $dark-blue + 7;
+		}
+		
+		&.selected{
+			background-color: $blue;
+			opacity: 1;
+		}
 	}
 }

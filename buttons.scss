@@ -1,29 +1,41 @@
-.btn {
-	font-family: inherit;
-	font-size: inherit;
-	background: #e2e2e2;
-	color: #777;
-	text-transform: capitalize;
-	cursor: pointer;
-	padding: 10px 20px;
-	text-decoration: none;
-	display: block;
-	border-radius: 4px;
-	font-size: .8em;
-	font-weight: 600;
-	text-align: center;
-	position: relative;
-	-webkit-touch-callout: none;
-	border: 2px solid transparent;
-	@include vendor-prefix(user-select, 'none');
+@mixin button-color($color:$light){
+	background: $color;
 	
-	&:hover {
-		color: lighten(#777, 10%);
+	&:hover{
+		background: lighten($color, 7%);
 	}
+	
+	&.outline{
+		background: none;
+		color: $color;
+		border-color: $color;
+		
+		&:hover {
+			color: lighten($color, 7%);
+			border-color: lighten($color, 7%);
+		}
+	}
+}
+
+.btn {
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: capitalize;
+	text-align: center;
+	text-decoration: none;
+	color: rgba(0, 0, 0, .5);
+	padding: 8px 20px;
+	position: relative;
+	display: inline-block;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	@include button-color($light);
+	@include vendor-prefix(user-select, 'none');
 
 	&:active {
-		top: 0.1em;
-		border-bottom-width: 0.2em;
+		top: 2px;
 	}
 	
 	&:focus{
@@ -31,49 +43,15 @@
 	}
 	
 	&.primary {
-		background: $green;
-		color: white;
-		
-		&:hover {
-			background: lighten($green, 10%);
-		}
+		@include button-color($green);
 	}
 	
 	&.secondary {
-		background: $blue;
-		color: white;
-		
-		&:hover {
-			background: lighten($blue, 10%);
-		}
+		@include button-color($blue);
 	}
 	
 	&.alert{
-		background: $red;
-		color: white;
-		
-		&:hover {
-			background: lighten($red, 10%);
-		}
-	}
-	
-	&.inverted {
-		background: white;
-		color: $blue;
-		
-		&:hover {
-			background: darken(white, 10%);
-		}
-		
-		&.outline{
-			border: 2px solid white;
-			color: white;
-			background: none;
-			
-			&:hover{
-				border-color: rgba(0, 0, 0, .3);
-			}
-		}
+		@include button-color($red);
 	}
 	
 	&.disable,

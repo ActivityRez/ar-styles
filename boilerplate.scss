@@ -1,7 +1,35 @@
+*, *:before, *:after{
+	@include vendor-prefix(box-sizing, 'border-box');
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	letter-spacing: 0.03em;
 	background: $extra-light;
+	color: $dark;
+}
+
+a {
+	text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+	color: transparent;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: transparent;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: transparent;
+}
+
+:-ms-input-placeholder {  
+	color: transparent;
 }
 
 .clearfix {
@@ -18,19 +46,41 @@ body {
 	}
 }
 
-.clear {
-	clear: both;
+.fl{float:left;}
+.fr{float:right;}
+.cl{clear:left;}
+.cr{clear:right;}
+.clear{clear: both;}
+
+.quarter {
+	width: 24%;
+	margin-right: 1.333%;
+	float: left;
+	
+	&:last-child, &:nth-child(4n){
+		margin-right: 0;
+	}
 }
 
-a {
-	text-decoration: none;
+.half {
+	width: 49%;
+	margin-right: 2%;
+	float: left;
+	
+	&:nth-child(2n){
+		margin-right: 0;
+	}
+	
+	& + .quarter{
+		margin-right: 1%
+	}
+	
 }
 
-.microcopy{
-	text-transform: uppercase;
-	font-size: 0.5em;
-	font-weight: 600;
-	color: #a0a0a0;
+.three-quarter{
+	width: 74%;
+	margin-right: 2%;
+	float: left;
 }
 
 .dropdown {
@@ -63,12 +113,24 @@ a {
 		white-space: nowrap;
 		padding: 5px 5px 5px 8px;
 		font-weight: 400;
+		
+		input{
+			outline: none;
+			border: none;
+			font-size: 16px;
+			height: 25px;
+			margin: 0;
+			padding: 2px 0 0 0;
+			font-weight: 300;
+			font-family: 'Roboto', sans-serif;
+			width: 100%;
+		}
 	}
 
 	.toggle {
 		float: right;
 		width: 30px;
-		height: 18px;
+		height: 24px;
 		position: relative;
 		cursor: pointer;
 		border-left: 1px solid #CECACA;
@@ -99,6 +161,10 @@ a {
 		
 		&.blue{
 			border-bottom-color: $blue;
+		}
+		
+		&:hover{
+			background: none;
 		}
 	}
 	.popup {
@@ -135,12 +201,8 @@ a {
 			}
 		}
 	}
+	
 	&.open{
-		/*
-margin-bottom: .1em;
-		top: .1em;
-*/
-		
 		.toggle {
 			height: 18px;
 		}
@@ -157,136 +219,112 @@ margin-bottom: .1em;
 	}
 }
 
-
-
-*, *:before, *:after{
-	@include vendor-prefix(box-sizing, 'border-box');
-	margin: 0;
-	padding: 0;
-	line-height: 1;
-}
-
-.hr {
-	height: 1px;
-	background: #eee;
-}
-
 .page {
 	position: fixed;
 	top: 46px;
 	bottom: 0;
 	left: -100%;
 	right: 100%;
-	padding-left: 246px;
-	padding-bottom: 20px;
+	padding: 0 15px 20px 261px;
 	overflow: auto;
-	box-sizing: border-box;
 	@include vendor-prefix(transition, 'left 1s, right 1s');
-	
-	&.has-subnav{
-		top: 81px;
-	}
 	
 	&.show {
 		left: 0;
 		right: 0;
 	}
-
-	h1 {
-		margin: 10px auto;
-		clear: both;
-		font-weight: 600;
-		text-transform: capitalize;
-		
-		.row{
-			margin-bottom: 15px;
-			border-bottom: 1px solid #d6d6d6;
-			padding: 0 0 5px 0;
-		}
-	}
-	
-	.nav {
-		margin-top:20px;
-	}
-	
-	.row{
-		font-weight: 500;
-		color: #464646;
-		width: 860px;
-		margin: 0 auto;
-		box-sizing: border-box;
-		clear: both;
-		
-		div.inner-row {
-			float: left;
-			width: 100%;
-			
-			&.quarter {
-				width: 24%;
-				margin-right: 1.333%;
-				
-				&:last-child, &:nth-child(4n){
-					margin-right: 0;
-				}
-			}
-	
-			&.half {
-				width: 49%;
-				margin-right: 2%;
-				
-				&:nth-child(2n){
-					margin-right: 0;
-				}
-				
-				& + .quarter{
-					margin-right: 1%
-				}
-				
-			}
-			
-			&.three-quarter{
-				width: 74%;
-				margin-right: 2%;
-			}
-		}
-	}
 }
 
 .main-header{
-	color: $darker;
-	padding: 0 0 15px;
-	margin-bottom: 60px;
 	position: relative;
+	margin: 0 0 15px;
+	padding: 0 0 7px;
+	border-bottom: 1px solid;
 	
-	h1.row{
-		
-		.btn{
-			padding: 4px 12px;
-			font-size: .8rem;
-			float: right;
-			min-width: 74px;
-			top: 8px;
-			
-			&.btn-edit {
-				padding: 21px 11px 13px;
-				line-height: 0;
-				font-size: .7em;
-			}
-		}
+	h1{
+		font-weight: 200;
+		float: left;
+	}
+	
+	.btn{
+		float: right;
 	}
 	
 	.small-load {
 		span {
-			background: white;
+			background: $blue;
 		}
 	}
 }
 
-.sub-header{
-	background: #efefef;
-	padding: 0px 0 9px;
+.main-container{
+	width: 1280px;
+	
+	@media(max-width: 1560px){
+		width: 980px;
+	}
 }
 
+.section{
+	background: white;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	width: 630px;
+	max-height: 1000px;
+	margin-bottom: 20px;
+	padding: 20px 15px;
+	@include vendor-prefix(transition, 'max-height .3s');
+	
+	@media(max-width: 1560px){
+		width: 980px;
+	}
+	
+	&.collapsable{
+		@include vendor-prefix(transition, 'max-height .3s, overflow 0 .3s');
+		
+		&.hide{
+			max-height: 59px;
+			overflow: hidden;
+		}
+	}
+}
+
+.section-header{
+	font-size: 24px;
+	font-weight: 300;
+	color: $medium;
+	margin: 0 0 25px;
+	display: inline-block;
+	
+	&.collapser{
+		position: relative;
+		cursor: pointer;
+		
+		&:after{
+			content: '\203A';
+			position: absolute;
+			right: -25px;
+			top: -8px;
+			font-size: 37px;
+			font-weight: 100;
+			@include vendor-prefix(transition, 'all .3s');
+		}
+		
+		&.active{
+			&:after{
+				@include vendor-prefix(transform, 'rotate(90deg)');
+			}
+		}
+	}
+}
+
+.microcopy{
+	text-transform: uppercase;
+	font-size: 0.5em;
+	font-weight: 600;
+	color: #a0a0a0;
+}
+
+/* delete this */
 h1.welcome {
 	width: 860px;
 	margin: 0 auto;
@@ -295,21 +333,12 @@ h1.welcome {
 	font-weight: 100;
 }
 
-#default {
-	background: #f0f0f0;
-}
-
-.buttons .btn,
-.dropdown,
-.btn.next,
-.btn.prev {
-	margin-top: 4px;	
-}
-
+/* move this to the right place */
 .invite-all .dropdown {
 	margin-top: 0;
 }
 
+/* move this to the right place */
 .user-invite {
 	&.error .btn {
 		background-color: #f00;
@@ -338,38 +367,6 @@ h1.welcome {
 		padding: 8px 10px;
 		color: #aaa;
 		border: 2px solid #fff;
-	}
-}
-
-.point:hover{
-	background: none;
-}
-
-@media (min-width: 1375px){
-
-	.page{
-		.lg-full{
-			width: 100%;
-			padding: 0 30px;
-		}
-		.splitter{
-			//@include vendor-prefix(columns, '2');
-			//@include vendor-prefix(column-gap, '35px');
-			//@include vendor-prefix(column-rule, '1px solid #f0f0f0');
-			width: 100%;
-			margin-top: 20px;
-			padding-left: 60px;
-			padding-right: 60px;
-			
-			.breaker{
-				//@include vendor-prefix(column-break-before, 'always');
-			}
-			
-			.row{
-				width: 100%;
-				//@include vendor-prefix(column-break-inside, 'avoid');
-			}
-		}
 	}
 }
 

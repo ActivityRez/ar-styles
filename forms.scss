@@ -47,10 +47,9 @@ div.input-wrap{
 		bottom: 0;
 		left: 0;
 		right: 0;
-		border-radius: 6px;
-		height: 30px;
+		height: 36px;
 		border: 1px solid #cacaca;
-		z-index: -1;
+		z-index: 0;
 	}
 	
 	&.textarea{
@@ -75,7 +74,7 @@ div.input-wrap{
 		left: 0;
 		z-index: 2;
 		padding: 9px;
-		height: 30px;
+		height: 36px;
 		outline: 0;
 		border-radius: 4px;
 		font-size: inherit;
@@ -83,12 +82,12 @@ div.input-wrap{
 		font-family: inherit;
 		font-weight: 300;
 		
-		&+label{
+		~label{
 			@include vendor-prefix(transition, 'color 0.2s, top 0.2s');
 		    position: absolute;
 		    color: #999;
 		    padding: 9px 9px 7px;
-		    top: 13px;
+		    top: 15px;
 		    bottom: 0;
 		    left: 0;
 		    width: 100%;
@@ -97,14 +96,14 @@ div.input-wrap{
 		    line-height: 1;
 		    white-space: nowrap;
 		    overflow: hidden;
-		    font-size: 13px;
+		    font-size: 16px;
 		    font-weight: 300;
 	
 		}
 		
 		~.clear-input{
 			position: absolute;
-			top: 18px;
+			top: 24px;
 			right: 5px;
 			color: darken($light, 10%);
 			background: white;
@@ -257,7 +256,12 @@ div.input-wrap{
 			color: $dark;
 		}
 	}
+}
+
+.btn + div.input-wrap{
+	top: -12px;
 }	
+
 .error-gutter{
 	max-height: 0;
 	color: white;

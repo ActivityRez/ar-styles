@@ -14,6 +14,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: $blue;
 }
 
 ::-webkit-input-placeholder {
@@ -62,6 +63,16 @@ a {
 	}
 }
 
+.third{
+	width: 32.6666%;
+	margin-right: 1%;
+	float: left;
+	
+	&:last-child, &:nth-child(3n){
+		margin-right: 0;
+	}
+}
+
 .half {
 	width: 49%;
 	margin-right: 2%;
@@ -71,7 +82,7 @@ a {
 		margin-right: 0;
 	}
 	
-	& + .quarter{
+	+.quarter{
 		margin-right: 1%
 	}
 	
@@ -81,6 +92,10 @@ a {
 	width: 74%;
 	margin-right: 2%;
 	float: left;
+	
+	&:last-child, &:nth-child(2n){
+		margin-right: 0;
+	}
 }
 
 .dropdown {
@@ -244,6 +259,12 @@ a {
 	h1{
 		font-weight: 200;
 		float: left;
+		
+		span{
+			&:last-child{
+				color: $medium;
+			}
+		}
 	}
 	
 	.btn{
@@ -262,6 +283,34 @@ a {
 	
 	@media(max-width: 1560px){
 		width: 980px;
+	}
+}
+
+.slider{
+	position: relative;
+	left: -650px;
+	z-index: -1;
+	@include vendor-prefix(transition, 'left .3s, z-index 0 .3s');
+	
+	&.shown{
+		left: 0;
+		z-index: 0;
+	}
+}
+
+.no-section{
+	width: 695px;
+	margin: 0 auto;
+	font-size: 16px;
+	font-weight: 400;
+	color: $medium;
+	
+	svg{
+		margin-right: 20px;
+	}
+	
+	div{
+		margin-bottom: 20px;
 	}
 }
 
@@ -286,42 +335,122 @@ a {
 			overflow: hidden;
 		}
 	}
-}
-
-.section-header{
-	font-size: 24px;
-	font-weight: 300;
-	color: $medium;
-	margin: 0 0 25px;
-	display: inline-block;
 	
-	&.collapser{
-		position: relative;
-		cursor: pointer;
+	.section-header{
+		font-size: 24px;
+		font-weight: 300;
+		color: $medium;
+		margin: 0 0 25px;
+		display: inline-block;
 		
-		&:after{
-			content: '\203A';
-			position: absolute;
-			right: -25px;
-			top: -8px;
-			font-size: 37px;
-			font-weight: 100;
-			@include vendor-prefix(transition, 'all .3s');
+		span.editing{
+			color: $red;
 		}
 		
-		&.active{
+		&.collapser{
+			position: relative;
+			cursor: pointer;
+			
 			&:after{
-				@include vendor-prefix(transform, 'rotate(90deg)');
+				content: '\203A';
+				position: absolute;
+				right: -25px;
+				top: -8px;
+				font-size: 37px;
+				font-weight: 100;
+				@include vendor-prefix(transition, 'all .3s');
+			}
+			
+			&.active{
+				&:after{
+					@include vendor-prefix(transform, 'rotate(90deg)');
+				}
+			}
+		}
+	}
+	
+	.list-header{
+		font-size: 12px;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: darken($light, 10%);
+		border-bottom: 1px solid $light;
+		margin-bottom: 10px;
+		padding-bottom: 5px;
+		
+		div{
+			float: left;
+		}
+	}
+	
+	.section-list{
+		list-style: none;
+		
+		li{
+			text-transform: uppercase;
+			font-size: .8rem;
+			font-weight: 700;
+			margin: 0 0 15px;
+			
+			.actions{
+				float: right;
+				text-align: right;
+				position: relative;
+				top: -2px;
+				margin-left: 10px;
 			}
 		}
 	}
 }
 
+.link{
+	color: $blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.large-type{
+	font-size: 22px;
+}
+
+.item-set{
+	border: 1px solid $medium;
+	padding: 30px 20px;
+	position: relative;
+	margin-top: 10px;
+	
+	> div{
+		margin: 0 0 20px;
+		
+		&:last-child{
+			margin-bottom: 0;
+		}
+		
+		&.set-label{
+			font-size: 12px;
+			color: $medium;
+			text-transform: uppercase;
+			position: absolute;
+			top: -6px;
+			background: white;
+			padding: 0 10px;
+		}	
+	}
+}
+
+.blurb{
+	font-weight: 200;
+	font-size: 14px;
+	line-height: 1.3;
+	color: $medium;
+	margin: 0 0 15px;
+}
+
 .microcopy{
+	font-weight: 500;
+	font-size: 12px;
+	color: $medium;
 	text-transform: uppercase;
-	font-size: 0.5em;
-	font-weight: 600;
-	color: #a0a0a0;
 }
 
 /* delete this */

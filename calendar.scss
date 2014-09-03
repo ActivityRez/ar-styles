@@ -1,14 +1,17 @@
 .calendar-wrap {
 	position: relative;
 
-	> .close.btn {
-		float: right;
-		top: 12px !important;
-		margin-left: -28px !important;
-		border-radius: 0 6px 6px 0;
-		padding: 1px 3px 2px !important;
-		display: none;
-		z-index: 12;
+	> .close {
+		color: darken($light, 10%);
+		position: absolute;
+		top: 19px;
+		right: 10px;
+		cursor: pointer;
+		z-index: 3;
+		
+		&:hover{
+			color: $red;
+		}
 		
 		.remove{
 			line-height: 1.4;
@@ -20,20 +23,21 @@
 	z-index: 12;
 	font-size: .9rem;
 	left: 0;
-	top: 54px;
+	top: 52px;
 	width: 300px;
 	display: none;
 	background: #fbfbfb;
 	color: $dark;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 	@include vendor-prefix(user-select, 'none');
 	
 	&:before {
 		content: '';
-		border: 15px solid transparent;
+		border: 10px solid transparent;
 		border-bottom-color: $darker;
 		@include vendor-prefix(filter, 'drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.2))');
 		position: absolute;
-		top: -28px;
+		top: -18px;
 		left: 40px;
 	}
 	
@@ -92,8 +96,8 @@
 	.days {
 		padding: 5px 0;
 		background: $light;
-		border-left: 2px solid lighten($medium, 40%);
-		border-right: 2px solid lighten($medium, 40%);
+		border-left: 2px solid lighten($light, 2%);
+		border-right: 2px solid lighten($light, 2%);
 		font-weight: 800;
 		
 		.day {
@@ -103,7 +107,7 @@
 	}
 	
 	.body {
-		border: 2px solid lighten($medium, 40%);
+		border: 2px solid white;
 		border-top: none;
 		padding: 10px 0;
 		
@@ -111,6 +115,7 @@
 			border-radius: 50%;
 			cursor: pointer;
 			padding: 7px 0;
+			line-height: 1.2;
 			@include vendor-prefix(transition, 'background .25s');
 			
 			&:hover {

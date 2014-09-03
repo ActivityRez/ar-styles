@@ -2,28 +2,6 @@ div.input-wrap{
 	position: relative;
 	overflow: hidden;
 	padding-top: 12px;
-
-	&:nth-child(2n+2){
-		margin-right: 0;
-	}
-	
-	&.fullWidth{
-		width: 100%;
-		margin-right: 0;
-	}
-	
-	&.threeCol{
-		width: 32%;
-		margin-right: 2%;
-		
-		&:nth-child(2n+2){
-			margin-right: 2%;
-		}
-		
-		&:nth-child(3n+3){
-			margin-right: 0;
-		}
-	}
 	
 	&.requiredInput{
 		label{
@@ -50,12 +28,6 @@ div.input-wrap{
 		height: 36px;
 		border: 1px solid #cacaca;
 		z-index: 0;
-	}
-	
-	&.textarea{
-		&:after{
-			height: auto;
-		}
 	}
 	
 	&.radio, &.checkbox{
@@ -85,6 +57,7 @@ div.input-wrap{
 		~label{
 			@include vendor-prefix(transition, 'color 0.2s, top 0.2s');
 		    position: absolute;
+		    font-family: "Roboto Slab";
 		    color: #999;
 		    padding: 9px 9px 7px;
 		    top: 15px;
@@ -113,13 +86,14 @@ div.input-wrap{
 			z-index: 2;
 			
 			&:hover{
-				color: red;
+				color: $red;
 			}
 		}
 
 		&.hasValue{			
 			~label{
 				font-size: 45%;
+				font-family: "Roboto";
 				font-weight: 400;
 				padding: 2px 6px 0px;
 				top: 0px;
@@ -203,6 +177,7 @@ div.input-wrap{
 			border-color: #89BCEB;
 			
 			~label{
+				font-family: "Roboto";
 				font-size: 45%;
 				font-weight: 400;
 				padding: 2px 6px 0px;
@@ -222,13 +197,8 @@ div.input-wrap{
 		}
 	}
 	
-	textarea[data-bind*="wysihtml5"], textarea[data-bind^="wysihtml5"]{
-		font-size: 14px;
-		line-height: 18px;
-	}
-	
 	textarea{
-		height: 68px;
+		height: 150px;
 		resize: none;
 		
 		&:focus{
@@ -236,6 +206,28 @@ div.input-wrap{
 			+label{
 				bottom: 66px;
 			}
+		}
+	}
+	
+	textarea[data-bind*="wysihtml5"], textarea[data-bind^="wysihtml5"]{
+		font-size: 14px;
+		line-height: 18px;
+		min-height: 150px;
+	}
+	
+	&.textarea{
+		label{
+			background: #e6e6e6;
+			top: 12px;
+			bottom: 153px;
+			border-radius: 0;
+			width: auto;
+			cursor: default;
+		}
+		
+		&:after{
+			height: auto;
+			border-color: #e6e6e6;
 		}
 	}
 	
@@ -277,6 +269,35 @@ div.input-wrap{
 		max-height: 30px;
 		padding: 1px;
 		@include vendor-prefix(transition, 'max-height .3s');
+	}
+}
+
+label.big-label{
+	color: $dark;
+	font-size: 18px;
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+label.checkbox{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 25px;
+	
+	input[type="checkbox"]{
+		margin:  0 10px 0 0;
+	}
+}
+
+label.radio{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 25px;
+	
+	input[type="radio"]{
+		margin:  0 10px 0 0;
 	}
 }
 

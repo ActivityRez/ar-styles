@@ -1,9 +1,7 @@
 .editor-toolbar {
-	background: #ECECEC;
+	background: #cfcfcf;
 	margin: 0;
 	padding: 0;
-	border: 1px solid #d0d0d0;
-	border-radius: 6px 6px 0 0;
 	position: relative;
 	z-index: 1;
 
@@ -13,8 +11,6 @@
 		text-decoration: none;
 		padding: 5px 10px;
 		display: inline-block;
-		border-right: 1px solid #DFB978;
-		border-right: 1px solid #ddd;
 		width: 41px;
 		height: 34px;
 		background-position: center center;
@@ -23,7 +19,14 @@
 		vertical-align: top;
 		background-size: 14px;
 		font-size: 14px;
+		float: right;
 		cursor: pointer;
+		opacity: .5;
+		@include vendor-prefix(transition, 'opacity .3s');
+		
+		&:hover{
+			opacity: 1;
+		}
 
 		&:last-of-type {
 			border-right: none;

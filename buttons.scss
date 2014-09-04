@@ -106,8 +106,8 @@
 		border-radius: 0;
 		float: left;
 		border-right-color: darken($light, 5%);
-		padding-left: 16px;
-		padding-right: 16px;
+		padding-left: 14px;
+		padding-right: 14px;
 		
 		&:first-child{
 			border-radius: 4px 0 0 4px;
@@ -122,8 +122,8 @@
 			background: $blue;
 			border-color: darken($blue, 5%);
 			top: 2px;
-			padding-top: 9px;
-			padding-bottom: 9px;
+			padding-top: 7px;
+			padding-bottom: 7px;
 		}
 	}
 }

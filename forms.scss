@@ -54,6 +54,11 @@ div.input-wrap{
 		font-family: inherit;
 		font-weight: 300;
 		
+		&:disabled, &[disabled="disable"], &[disabled="true"]{
+			opacity: .5;
+			cursor: not-allowed;
+		}
+		
 		~label{
 			@include vendor-prefix(transition, 'color 0.2s, top 0.2s');
 		    position: absolute;
@@ -329,6 +334,7 @@ select{
 	
 	&:disabled, &[disabled="disable"], &[disabled="true"]{
 		opacity: .5;
+		cursor: not-allowed;
 	}
 	
 	&:focus{

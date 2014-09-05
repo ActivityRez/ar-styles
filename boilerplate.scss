@@ -269,6 +269,7 @@ a {
 	
 	.btn{
 		float: right;
+		margin-left: 10px;
 	}
 	
 	.small-load {
@@ -278,10 +279,14 @@ a {
 	}
 }
 
+.sub-header{
+	
+}
+
 .main-container{
 	width: 1280px;
 	
-	@media(max-width: 1560px){
+	@media(max-width: $two-col-break){
 		width: 980px;
 	}
 }
@@ -318,16 +323,20 @@ a {
 	background: white;
 	box-shadow: 0 2px 4px rgba(0,0,0,.2);
 	width: 630px;
-	max-height: 1000px;
 	margin-bottom: 20px;
 	padding: 20px 15px;
 	@include vendor-prefix(transition, 'max-height .3s');
 	
-	@media(max-width: 1560px){
+	@media(max-width: $two-col-break){
 		width: 980px;
 	}
 	
+	&.full{
+		width: 100%;
+	}
+	
 	&.collapsable{
+		max-height: 1000px;
 		@include vendor-prefix(transition, 'max-height .3s, overflow 0 .3s');
 		
 		&.hide{

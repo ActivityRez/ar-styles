@@ -1,16 +1,17 @@
 @mixin button-color($color:$light){
 	background: $color;
 	
-	&:hover{
+	&:not(:disabled):hover{
 		background: lighten($color, 7%);
 	}
 	
 	&.outline{
-		background: none;
+		background: transparent;
 		color: $color;
 		border-color: $color;
 		
-		&:hover {
+		&:not(:disabled):hover {
+			background: transparent;
 			color: lighten($color, 7%);
 			border-color: lighten($color, 7%);
 		}
@@ -64,6 +65,10 @@
 		@include button-color($red);
 	}
 	
+	&.cancel{
+		@include button-color($dark);
+	}
+	
 	&.disable,
 	&:disabled,
 	&.disabled {
@@ -75,7 +80,6 @@
 			border-bottom-width: 0.2em;
 			margin-bottom: 0;
 		}
-		
 	}
 	
 	&>.option{

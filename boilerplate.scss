@@ -462,6 +462,19 @@ a {
 	text-transform: uppercase;
 }
 
+#footer{
+	background: $medium-blue;
+	font-size: 16px;
+	font-weight: 200;
+	text-align: center;
+	color: white;
+	padding: 20px 0 20px 260px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
 /* delete this */
 h1.welcome {
 	width: 860px;

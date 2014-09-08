@@ -240,7 +240,7 @@ a {
 	bottom: 0;
 	left: -100%;
 	right: 100%;
-	padding: 0 15px 20px 261px;
+	padding: 0 15px 76px 261px;
 	overflow: auto;
 	@include vendor-prefix(transition, 'left 1s, right 1s');
 	
@@ -465,9 +465,9 @@ a {
 #footer{
 	background: $medium-blue;
 	font-size: 16px;
-	font-weight: 200;
+	font-weight: 300;
 	text-align: center;
-	color: white;
+	color: rgba(255, 2255, 255, .5);
 	padding: 20px 0 20px 260px;
 	position: absolute;
 	bottom: 0;

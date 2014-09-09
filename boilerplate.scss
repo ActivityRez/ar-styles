@@ -255,6 +255,11 @@ a {
 	margin: 20px 0 15px;
 	padding: 0 0 7px;
 	border-bottom: 1px solid;
+	width: 1280px;
+	
+	@media(max-width: $two-col-break){
+		width: 980px;
+	}
 	
 	h1{
 		font-weight: 200;
@@ -280,7 +285,11 @@ a {
 }
 
 .sub-header{
+	width: 1280px;
 	
+	@media(max-width: $two-col-break){
+		width: 980px;
+	}
 }
 
 .main-container{

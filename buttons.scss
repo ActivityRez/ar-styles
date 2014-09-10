@@ -6,14 +6,72 @@
 	}
 	
 	&.outline{
-		background: transparent;
+		background: white;
 		color: $color;
 		border-color: $color;
 		
 		&:not(:disabled):hover {
-			background: transparent;
+			background: white;
 			color: lighten($color, 7%);
 			border-color: lighten($color, 7%);
+		}
+		
+		&.next-arrow{
+			right: 18px;
+			
+			&:after {
+			    content: '\A';
+				position: absolute;
+				right: -18px;
+				top: -2px;
+				width: 0;
+				height: 0;
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+			    border-left: 18px solid $color;
+			}
+			
+			&:before {
+				content: '\A';
+				position: absolute;
+				right: -15px;
+				top: 0px;
+				width: 0;
+				height: 0;
+				border-top: 16px solid transparent;
+				border-bottom: 16px solid transparent;
+				border-left: 16px solid white;
+				z-index: 10;
+			}
+		}
+		
+		&.prev-arrow{
+			left: 18px;
+			
+			&:after {
+			    content: '\A';
+				position: absolute;
+				left: -18px;
+				top: -2px;
+				width: 0;
+				height: 0;
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+			    border-right: 18px solid $color;
+			}
+			
+			&:before {
+				content: '\A';
+				position: absolute;
+				left: -15px;
+				top: 0px;
+				width: 0;
+				height: 0;
+				border-top: 16px solid transparent;
+				border-bottom: 16px solid transparent;
+				border-right: 16px solid white;
+				z-index: 10;
+			}
 		}
 	}
 }

@@ -113,8 +113,8 @@
 	a{
 		font-size: 16px;
 		font-weight: 300;
-		color: white;
-		opacity: .5;
+		color: rgba(255, 255, 255, .5);
+		background: $dark-blue;
 		padding: 15px;
 		display: block;
 		float: left;
@@ -126,7 +126,7 @@
 		
 		&.selected{
 			background-color: $blue;
-			opacity: 1;
+			color: white;
 		}
 	}
 }

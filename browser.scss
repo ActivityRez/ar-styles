@@ -36,7 +36,8 @@
 				font-size: 14px;
 				font-weight: 300;
 				opacity: .71;
-				padding: 16px 39px 13px;
+				padding: 0 39px;
+				line-height: 40px;
 				background: url(../../images/sidebar-sprites.png) no-repeat;
 				position: relative;
 				@include vendor-prefix(transition, 'background-color 0.3s');

@@ -36,7 +36,8 @@
 				font-size: 14px;
 				font-weight: 300;
 				opacity: .71;
-				padding: 16px 39px 13px;
+				padding: 0 39px;
+				line-height: 40px;
 				background: url(../../images/sidebar-sprites.png) no-repeat;
 				position: relative;
 				@include vendor-prefix(transition, 'background-color 0.3s');
@@ -45,14 +46,14 @@
 					background-color: $dark-blue + 7;
 				}
 				
-				&.account-manage{background-position: 16px 15px}
-				&.marketplace{background-position: 16px -18px}
-				&.products{background-position: 16px -47px}
-				&.sales-channels{background-position: 16px -80px}
-				&.reports{background-position: 16px -112px}
-				&.operations{background-position: 16px -143px}
-				&.fulfillment{background-position: 16px -175px}
-				&.dispatch{background-position: 16px -206px}
+				&.account-manage{background-position: 16px 12px}
+				&.marketplace{background-position: 16px -21px}
+				&.products{background-position: 16px -50px}
+				&.sales-channels{background-position: 16px -83px}
+				&.reports{background-position: 16px -115px}
+				&.operations{background-position: 16px -146px}
+				&.fulfillment{background-position: 16px -178px}
+				&.dispatch{background-position: 16px -209px}
 				
 				&.selected{
 					background-color: $blue;

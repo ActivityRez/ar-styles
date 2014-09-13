@@ -46,16 +46,33 @@
 					background-color: $dark-blue + 7;
 				}
 				
-				&.account-manage{background-position: 16px 15px}
-				&.marketplace{background-position: 16px -18px}
-				&.products{background-position: 16px -47px}
-				&.sales-channels{background-position: 16px -80px}
-				&.reports{background-position: 16px -112px}
-				&.operations{background-position: 16px -143px}
-				&.fulfillment{background-position: 16px -175px}
-				&.dispatch{background-position: 16px -206px}
-				&.support{background-position: 16px -243px}
-				&.billing{background-position: 16px -274px}
+				&.has-subnav{
+					&:after{
+						content: '\203A';
+						position: absolute;
+						right: 20px;
+						top: 7px;
+						font-size: 23px;
+						font-weight: 100;
+						@include vendor-prefix(transition, 'all .3s');
+					}
+					&.active{
+						&:after{
+							@include vendor-prefix(transform, 'rotate(90deg)');
+						}
+					}
+				}
+				
+				&.account-manage{background-position: 16px 12px}
+				&.marketplace{background-position: 16px -21px}
+				&.products{background-position: 16px -50px}
+				&.sales-channels{background-position: 16px -83px}
+				&.reports{background-position: 16px -115px}
+				&.operations{background-position: 16px -146px}
+				&.fulfillment{background-position: 16px -178px}
+				&.dispatch{background-position: 16px -209px}
+				&.support{background-position: 16px -246px}
+				&.billing{background-position: 16px -277px}
 				
 				&.selected{
 					background-color: $blue;
@@ -74,6 +91,13 @@
 			
 			.subnav{
 				background-color: $dark-blue - 10;
+				max-height: 0;
+				overflow: hidden;
+				@include vendor-prefix(transition, 'max-height .3s');
+				
+				&.open{
+					max-height: 100px;
+				}
 				
 				a{
 					&:hover{

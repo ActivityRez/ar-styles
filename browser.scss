@@ -73,6 +73,7 @@
 				&.dispatch{background-position: 16px -209px}
 				&.support{background-position: 16px -246px}
 				&.billing{background-position: 16px -277px}
+				&.POS{background-position: 16px -307px}
 				
 				&.selected{
 					background-color: $blue;
@@ -96,7 +97,7 @@
 				@include vendor-prefix(transition, 'max-height .3s');
 				
 				&.open{
-					max-height: 100px;
+					max-height: 130px;
 				}
 				
 				a{

@@ -24,7 +24,9 @@
 		margin: 0;
 		font-weight: 400;
 		font-size: 1em;
-		color: $darker;
+		color: white;
+		opacity: .5;
+		margin-bottom: 10px;
 	}
 	
 	.buttons {
@@ -51,7 +53,8 @@
 		margin-top: 4px;
 		padding: 5px 0;
 		cursor: pointer;
-		color: $darker;
+		color: white;
+		opacity: .5;
 		font-weight: 500;
 	}
 	
@@ -80,7 +83,8 @@
 	.row{
 		&.forgotPass{
 			text-transform: capitalize;
-			color: $darker;
+			color: white;
+			opacity: .5;
 			font-size: 12px;
 			text-decoration: underline;
 			cursor: pointer;

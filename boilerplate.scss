@@ -244,6 +244,16 @@ a {
 	overflow: auto;
 	@include vendor-prefix(transition, 'left 1s, right 1s');
 	
+	&#landing {
+		.main-header {
+			position: absolute;
+			top: 50%;
+			left: 261px;
+			right: 0;
+			margin-top: -40px;
+		}
+	}
+	
 	&.show {
 		left: 0;
 		right: 0;

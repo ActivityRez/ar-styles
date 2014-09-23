@@ -98,6 +98,104 @@ a {
 	}
 }
 
+.list{
+	h3{
+		color: $blue;
+		font-size: 18px;
+		margin-bottom: 15px;
+		font-weight: 500;
+	}
+	
+	ol, ul{
+		font-size: 14px;
+		margin-left: 20px;
+		
+		li{
+			line-height: 1.5;
+			
+			a{
+				color: $dark;
+			}
+		}
+	}
+}
+
+.right-sidebar{
+	float: right;
+	width: 220px;
+	margin-left: 20px;
+	font-family: "Roboto Condensed";
+	
+	h3{
+		color: $green;
+		border-bottom: 1px solid;
+		margin-bottom: 15px;
+		line-height: .95;
+		font-size: 22px;
+		font-weight: 300;
+		text-shadow: 1px 0 0 $extra-light, -1px 0 0 $extra-light;
+	}
+	
+	.cost{
+		font-size: 30px;
+		font-weight: 600;
+		margin-bottom: 20px;
+		
+		span{
+			font-size: 16px;
+			color: $medium;
+			font-weight: 400;
+		}
+	}
+	
+	.features{
+		list-style: none;
+		margin-bottom: 30px;
+		
+		li{
+			line-height: 2;
+			color: $medium;
+			font-size: 14px;
+			padding-left: 20px;
+			position: relative;
+			
+			&:before{
+				position: absolute;
+				left: 0;
+				top: 7px;
+				
+			}
+			
+			&.active{
+				&:before{
+					content: '\2713';
+					color: white;
+					background: $green;
+					border-radius: 50%;
+					height: 14px;
+					width: 14px;
+					text-align: center;
+					font-size: 12px;
+					line-height: 1.2;
+				}
+			}
+			
+			&.inactive{
+				&:before{
+					content: '\2716';
+					color: $red;
+					font-size: 17px;
+					top: 5px;
+				}
+			}
+		}
+	}
+	.btn{
+		display: block;
+	font-family: "Roboto";
+	}
+}
+
 .dropdown {
 	text-align: left;
 	background: #fff;
@@ -343,7 +441,7 @@ a {
 
 .section{
 	background: white;
-	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 	width: 630px;
 	margin-bottom: 20px;
 	padding: 20px 15px;
@@ -354,7 +452,7 @@ a {
 	}
 	
 	&.full{
-		width: 100%;
+		width: auto;
 	}
 	
 	&.collapsable{

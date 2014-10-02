@@ -514,11 +514,20 @@ a {
 	position: relative;
 	left: -650px;
 	z-index: -1;
-	@include vendor-prefix(transition, 'left .3s, z-index 0 .3s');
+	@include vendor-prefix(transition, 'left .3s, max-height .3s, z-index 0 .3s');
+	
+	@media(max-width: $two-col-break){
+		left: 0;
+		max-height: 0;
+		overflow: hidden;
+	}
 	
 	&.shown{
 		left: 0;
+		top: 0;
+		overflow: visible;
 		z-index: 0;
+		max-height: 1000px;
 	}
 }
 

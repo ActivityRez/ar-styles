@@ -544,7 +544,6 @@ a {
 	width: 630px;
 	margin-bottom: 20px;
 	padding: 20px 15px;
-	@include vendor-prefix(transition, 'max-height .3s');
 	
 	@media(max-width: $two-col-break){
 		width: 980px;
@@ -556,7 +555,7 @@ a {
 	
 	&.collapsable{
 		max-height: 1000px;
-		@include vendor-prefix(transition, 'max-height .3s, overflow 0 .3s');
+		@include vendor-prefix(transition, 'max-height .3s');
 		
 		&.hide{
 			max-height: 59px;

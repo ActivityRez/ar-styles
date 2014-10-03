@@ -3,6 +3,22 @@ div.input-wrap{
 	overflow: hidden;
 	padding-top: 12px;
 	
+	::-webkit-input-placeholder {
+		color: transparent;
+	}
+	
+	:-moz-placeholder { /* Firefox 18- */
+		color: transparent;
+	}
+	
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: transparent;
+	}
+	
+	:-ms-input-placeholder {  
+		color: transparent;
+	}
+	
 	&.requiredInput{
 		label{
 			&:before{

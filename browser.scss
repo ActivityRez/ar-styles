@@ -156,9 +156,20 @@
 			background-color: $dark-blue + 7;
 		}
 		
+		&.o-chat{
+			float: right;
+			background-image: url(../../images/topbar-sprites.png);
+			background-position: 22px 15px;
+			background-repeat: no-repeat;
+			width: 65px;
+			text-indent: -9000px;
+			opacity: .5;
+		}
+		
 		&.selected{
 			background-color: $blue;
 			color: white;
+			opacity: 1;
 		}
 	}
 }

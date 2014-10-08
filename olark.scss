@@ -1,0 +1,141 @@
+#habla_beta_container_do_not_rely_on_div_classes_or_names{
+	position: absolute;
+	right: -344px;
+	top: 56px;
+	z-index: 1000;
+	@include vendor-prefix(transition, 'right .3s');
+	
+	&.show{
+		right: -21px;
+	}
+	
+	#habla_both_div{
+		display: none !important;
+	}
+	
+	div{
+		&.hbl_pal_main_width{
+			width: 324px !important;
+		}
+	}
+}
+
+#habla_window_div{
+	padding-right: 10px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	
+	*{
+		@include vendor-prefix(box-sizing, 'border-box !important');
+	}
+	
+	#habla_pre_chat_div,
+	#habla_offline_message_sent_div,
+	#habla_offline_message_div{
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	
+	#habla_offline_message_span,  #habla_pre_chat_span{
+		font-family: 'Roboto';
+		color: $dark;
+	}
+	
+	#habla_expanded_div{
+		padding: 10px 10px 0!important;
+		border-right: none !important;
+		border-left: 3px solid $blue !important;
+	}
+	
+	&.habla_window_div_position_inline{
+		.habla_panel_border{
+			border: none !important;
+		}
+	}
+	
+	input[type=submit], button{
+		font-size: 16px !important;
+		font-weight: 600;
+		text-transform: capitalize;
+		text-align: center;
+		text-decoration: none;
+		color: rgba(0, 0, 0, .5);
+		padding: 8px 20px !important;
+		margin-top: 15px !important;
+		width: 100% !important;
+		position: relative;
+		display: inline-block;
+		border: 2px solid transparent;
+		border-radius: 4px !important;
+		cursor: pointer !important;
+		-webkit-touch-callout: none;
+		@include button-color($green);
+		@include vendor-prefix(user-select, 'none');
+	}
+	
+	::-webkit-input-placeholder {
+		color: #999;
+		box-shadow: none;
+		font-family: "Roboto Slab" !important;
+		font-size: 16px !important;
+		font-weight: 300;
+	}
+	
+	:-moz-placeholder { /* Firefox 18- */
+		color: #999;
+		box-shadow: none;
+		font-family: "Roboto Slab" !important;
+		font-size: 16px !important;
+		font-weight: 300;
+	}
+	
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: #999;
+		box-shadow: none;
+		font-family: "Roboto Slab" !important;
+		font-size: 16px !important;
+		font-weight: 300;
+	}
+	
+	:-ms-input-placeholder {  
+		color: #999;
+		box-shadow: none;
+		font-family: "Roboto Slab" !important;
+		font-size: 16px !important;
+		font-weight: 300;
+	}
+	
+	#habla_name_input,
+	#habla_offline_email_input,
+	#habla_offline_body_input,
+	#habla_pre_chat_name_input,
+	#habla_pre_chat_email_input,
+	#habla_pre_chat_phone_input,
+	#habla_offline_phone_input,
+	#habla_pre_chat_phone_input{
+		width: 100%;
+		max-width: 100%;
+		background: none;
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		margin-top: 12px;
+		padding: 9px !important;
+		height: 36px !important;
+		outline: 0;
+		border-radius: 0 !important;
+		font-size: inherit !important;
+		box-shadow: none;
+		font-family: "Roboto";
+		font-size: 16px !important;
+		color: black;
+		font-weight: 300;
+	}
+	
+	#habla_wcsend_input{
+		height: 36px !important;
+		font-size: 14px !important;
+		color: black;
+		font-weight: 300;
+	}
+}
